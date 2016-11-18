@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -20,7 +20,7 @@
           <tr>
             <th>Food</th>
             <th>Amount</th>
-            <th>Expires</th>
+            <th>Expires In</th>
             <th></th>
           </tr>
         </thead>
@@ -34,16 +34,21 @@
     <div class="row" id="entry">
       <form class="form-inline">
         <div class="form-group">
-          <input type="text" class="form-control" id="newFood" placeholder="Enter New Food">
-          <input type="text" class="form-control" id="newAmt" placeholder="Amount">
+          <input type="text" class="form-control" id="newFood" placeholder="Enter New Food" required>
+          <input type="text" class="form-control" id="newAmt" placeholder="Amount" required>
           <select class="form-control" id="newLabel">
             <option value="qty">qty</option>
             <option value="lb">lb</option>
             <option value="oz">oz</option>
           </select>
-          <input type="text" class="form-control" id="newExp" placeholder="Expiration(mm/dd/yyyy)">
-          <input type="text" class="form-control" id="newLife" placeholder="Shelf Life(days)">
-        </div>
+          <select class="form-control" id="newLoc">
+            <option value="fridge">Fridge</option>
+            <option value="cupboard">Cupboard</option>
+          </select>
+          <label for="newExp">Expiration: </label>
+          <input type="date" class="form-control" id="newExp" placeholder="Expiration" required>
+<!--          <input type="text" class="form-control" id="newLife" placeholder="Shelf Life(days)">
+-->     </div>
         <button type="submit" class="btn btn-primary" id="addNew">Add It!</button>
       </form>
     </div>
@@ -51,7 +56,7 @@
 
   <div class="container">
     <div class="row" id="filters">
-      <button type="button" id="fridge" title="Mouseover">Fridge</button>
+      <button type="button" id="fridge">Fridge</button>
       <button type="button" id="cupboard">Cupboard</button>
     </div>
   </div>
@@ -63,9 +68,6 @@
       <button type="button" id="cook">Cook</button>
     </div>
   </div>
-
-
-
 
   <script type="text/javascript" src="myscript.js"></script>
 </body>
